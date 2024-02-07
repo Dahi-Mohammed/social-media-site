@@ -1,0 +1,255 @@
+
+.card {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(120, 159, 169);
+    padding: 100px 15px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.card .inputs {
+    position: relative;
+    width: 100%;
+}
+
+.card #text-post {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    background-color: rgba(240, 244, 244, 0.345);
+    resize: none;
+    border-radius: 6px;
+    color: rgb(1, 15, 15);
+    font-size: 17px;
+    border: 2px solid rgba(0, 0, 0, 0.355);
+    outline: none;
+    caret-color: rgb(22, 183, 223);
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+}
+
+.card .inputs  #image-new-post{
+    background-color: rgba(240, 244, 244, 0.345);
+    display: block;
+    color: white;
+    width: 100%;
+    background-color: tr;
+    padding: 9px 5px;
+    position: absolute;
+    left: 0;
+    bottom: -37px;
+    border:2px solid rgba(0, 0, 0, 0.355);
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+}
+
+.card #btn-new-post {
+    background-color: rgb(22, 183, 223);
+    margin-top: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 17px;
+    width: 150px;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card #btn-new-post:hover {
+    background-color: green;
+}
+
+
+@media only screen and (min-width: 600px){
+    .card {
+        padding:  100px 15%;
+    }
+
+    .card #image-new-post {
+        width: calc(100% - 30%);
+        left: 15%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .card {
+        padding:  100px 25%;
+    }
+
+    .card #image-new-post {
+        width: calc(100% - 50%);
+        left: 25%;
+    }
+}
+header {
+    box-shadow: 0 0 0 transparent;
+    border: none;
+}
+
+.all-posts .post{
+    margin-top: 71px;
+    min-height: 100vh;
+}
+
+.all-posts .post .head {
+    position: relative;
+}
+
+.all-posts .post .back {
+    color: rgb(22, 183, 223);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.all-posts .post .back:hover {
+    background-color: rgba(0, 0, 0, 0.099);
+}
+
+
+.all-posts .post .comment-content {
+    padding: 8px ;
+    padding-bottom: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.all-posts .post .comment-content #comment {
+    display: flex;
+    padding-bottom: 2px;
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.all-posts .post .comment-content img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.all-posts .post .comment-content .text {
+    margin-left: 17px;
+    margin-top: 10px;
+    border-radius: 11px;
+    border-top-left-radius: 0;
+    background-color: #00000014;
+    padding: 8px;
+    position: relative;
+    max-width: 77%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.all-posts .post .comment-content .text::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-right-color: #00000014;
+
+}
+
+
+.all-posts .post .comment-content h3{
+    margin-bottom: 5px;
+}
+
+.all-posts .post .comment-content p{
+    color: #00000099;
+}
+
+
+.all-posts .comment-content .create-comment {
+    position: fixed;
+    height: 51px;
+    width: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(254, 248, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-posts .comment-content .create-comment input[type="text"]{
+    width: calc(100% - 30px);
+    background-color: rgba(0, 0, 0, 0.092);
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 19px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.all-posts .comment-content .create-comment input[type="text"]:hover {
+    border: 2px solid rgba(0, 0, 0, 0.121);
+}
+
+
+
+.all-posts .comment-content .create-comment .send {
+    position: absolute;
+    right: 26px;
+    cursor: pointer;
+    color: rgb(22, 183, 223);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .4;
+    pointer-events: none;
+}
+
+.all-posts .comment-content .create-comment .send.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.all-posts .comment-content .create-comment .send:hover {
+    
+    background-color: rgba(0, 0, 0, 0.099);
+}
+
+
+@media only screen and (max-width: 600px){
+    .all-posts .comment-content .create-comment{
+        width: 100%;
+    }
+    
+    .all-posts .post .image-post img {
+        max-height: 77vh;
+    }
+}
+
+.animation-loded-comment {
+    display: flex;
+    z-index: 2;
+}
+
+
