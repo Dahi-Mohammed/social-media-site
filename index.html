@@ -125,7 +125,76 @@
     <div class="massege-setting center-fixed">
         <p>should log in for enjoy of more from advantages</p>
     </div>
-    <script src="./javascript_fils/main.js" type="module"></script>
+    <script src="./javascript_fils/main.js" type="module">
+        
+function getPosts (reload) {
+    infiniteLoded === 1 ? newPostBox.classList.remove("active") : "";
+    let requestOptions = {
+        method: "GET"
+    };
+    fetch(`${urlApi}posts?page=${reload}`,requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        animationLoded.style.display = "none";
+        sessionStorage.getItem("token") !== null ? newPostBox.classList.add("active") : allPost.style.marginTop = "90px";
+        header.style.display = "flex";
+        for(let i = 0; i < result.data.length; i ++){ 
+            allPost.innerHTML += `
+            <div class="post" data="${result.data[i].id}">
+                <div class="head">
+                <span class="massege">you must log in</span>
+                        <div class="user-profile" user-id="${result.data[i].author.id}">
+                            <img src="${result.data[i].author.profile_image}" alt="" class="user-photo">
+                            <div class="text">
+                                <h2 class="user-name">${result.data[i].author.username}</h2>
+                                <span class="date-post">${result.data[i].created_at}</span>
+                                </div>
+                                </div>
+                                </div>
+                                <div class="image-post">
+                                <img src="${result.data[i].image}" alt="">
+                                </div>
+                                <div class="footer-post">
+                                <div class="content">
+                                <p class="text-post">${result.data[i].body}</p>
+                                </div>
+                                <div class="comments center-flex">
+                                <span class="massege">you must log in</span>
+                                <div class="counter-comment">comments(${result.data[i].comments_count})</div>
+                                </div>
+                    </div>
+                    </div>
+                    `        
+        } 
+
+        
+
+        if(btnDarkMode.classList.contains("active")){
+            playDarkMode();
+        }else {
+        }
+        document.querySelectorAll(".post .user-photo").forEach( img => {
+            if(img.src.endsWith("[object%20Object]")){
+                img.src = "../images/profile_null.jfif";
+            }
+        })
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+getPosts(infiniteLoded);
+    </script>
 </body>
 </html>
 
